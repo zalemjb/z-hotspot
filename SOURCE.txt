@@ -1,0 +1,4 @@
+Bundled create_ap: linux-wifi-hotspot v5.0.0, BSD-2-Clause.
+https://github.com/lakinduakash/linux-wifi-hotspot/releases/tag/v5.0.0
+Original package SHA256: efb70cd67293d6da4ab935e4639eb05a3459f3f37ec1484bd701b0ff4c30330b
+Local changes: preserve whitespace/backslashes in credentials read from stdin; load a root-owned deny_mac_file before AP activation via MINT_HOTSPOT_DENY_FILE.

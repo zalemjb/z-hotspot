@@ -1,0 +1,24 @@
+name: Feature request
+description: Suggest an improvement to Z Hotspot.
+title: "[Feature] "
+labels: [enhancement]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: What would this help you do?
+      description: Describe the situation or problem in your own words.
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed behavior
+      description: What should the app do, and where would you expect to find it?
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives or examples
+      description: Optional examples, screenshots, or workarounds. Remove any private information.

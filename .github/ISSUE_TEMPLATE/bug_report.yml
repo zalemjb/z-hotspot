@@ -1,0 +1,60 @@
+name: Bug report
+description: Report a problem with Z Hotspot.
+title: "[Bug] "
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Please remove passwords, QR codes, transfer links, personal filenames, and private network identifiers from anything you attach. For security vulnerabilities, read SECURITY.md before posting details.
+  - type: input
+    id: version
+    attributes:
+      label: Z Hotspot version
+      placeholder: "v0.1"
+    validations:
+      required: true
+  - type: input
+    id: system
+    attributes:
+      label: Linux distribution and version
+      placeholder: "Linux Mint 22.3 Cinnamon"
+    validations:
+      required: true
+  - type: textarea
+    id: hardware
+    attributes:
+      label: Network setup
+      description: Wi-Fi adapter/driver, upstream source (Wi-Fi or Ethernet), and frequency. Leave out MAC addresses and Wi-Fi credentials.
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. Open ...
+        2. Select ...
+        3. Observe ...
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: What happened
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Redacted logs or screenshots
+      description: If helpful, attach the app's activity log or a screenshot after removing private information.
+  - type: textarea
+    id: device
+    attributes:
+      label: Receiving device and browser (file-sharing issues)
+      description: Give the actual OS/browser version, whether the transfer was a download or upload, and the approximate file size.

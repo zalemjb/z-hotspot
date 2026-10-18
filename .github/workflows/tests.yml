@@ -1,0 +1,36 @@
+name: Tests and Debian package
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test-and-build:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - name: Check out source
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - name: Install test and build dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install --no-install-recommends -y python3-gi python3-cairo python3-gi-cairo python3-qrcode python3-pil gir1.2-gtk-3.0 gir1.2-ayatanaappindicator3-0.1 libzbar0 xvfb xauth desktop-file-utils
+      - name: Run isolated tests
+        run: xvfb-run -a /usr/bin/python3 -m unittest discover -s tests -v
+      - name: Validate helper script
+        run: bash -n create_ap
+      - name: Build Debian package
+        run: /usr/bin/python3 scripts/build_deb.py
+      - name: Retain installable package
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: z-hotspot-debian
+          path: dist/*.deb
+          if-no-files-found: error
+          retention-days: 14
