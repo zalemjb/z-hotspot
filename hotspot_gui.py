@@ -917,7 +917,10 @@ class HotspotWindow(Gtk.Window, FileSharingControls):
         self.set_icon_name("z-hotspot")
         icon_file = Path(__file__).resolve().with_name("icon.svg")
         if icon_file.is_file():
-            self.set_icon_from_file(str(icon_file))
+            try:
+                self.set_icon_from_file(str(icon_file))
+            except GLib.Error:
+                pass
         self.set_wmclass("hotspot-manager", "Hotspot Manager")
         self.get_style_context().add_class("hotspot-window")
         provider = Gtk.CssProvider()
@@ -1832,7 +1835,10 @@ class CompactHotspotWindow(Gtk.Window):
         self.set_icon_name("z-hotspot")
         icon_file = Path(__file__).resolve().with_name("icon.svg")
         if icon_file.is_file():
-            self.set_icon_from_file(str(icon_file))
+            try:
+                self.set_icon_from_file(str(icon_file))
+            except GLib.Error:
+                pass
         self.set_wmclass("hotspot-manager", "Hotspot Manager")
         for css in ("hotspot-window", "compact-window"):
             self.get_style_context().add_class(css)

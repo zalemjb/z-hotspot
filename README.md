@@ -82,7 +82,7 @@ Only explicitly selected files are offered. Receiving is off until enabled; uplo
 Install the system dependencies, then keep the Python modules and bundled `create_ap` helper together:
 
 ```sh
-sudo apt install python3 python3-gi python3-qrcode gir1.2-gtk-3.0 \
+sudo apt install python3 python3-gi python3-qrcode gir1.2-gtk-3.0 librsvg2-common \
   gir1.2-ayatanaappindicator3-0.1 network-manager hostapd dnsmasq-base iw iptables pkexec
 ```
 

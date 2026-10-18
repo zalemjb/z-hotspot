@@ -20,7 +20,7 @@ jobs:
       - name: Install test and build dependencies
         run: |
           sudo apt-get update
-          sudo apt-get install --no-install-recommends -y python3-gi python3-cairo python3-gi-cairo python3-qrcode python3-pil gir1.2-gtk-3.0 gir1.2-ayatanaappindicator3-0.1 libzbar0 xvfb xauth desktop-file-utils
+          sudo apt-get install --no-install-recommends -y python3-gi python3-cairo python3-gi-cairo python3-qrcode python3-pil gir1.2-gtk-3.0 gir1.2-ayatanaappindicator3-0.1 librsvg2-common libzbar0 xvfb xauth desktop-file-utils
       - name: Run isolated tests
         run: xvfb-run -a /usr/bin/python3 -m unittest discover -s tests -v
       - name: Validate helper script

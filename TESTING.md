@@ -6,7 +6,7 @@ Use the system Python with GTK 3/PyGObject and the project's system dependencies
 
 ```sh
 sudo apt install python3-gi python3-cairo python3-gi-cairo python3-qrcode \
-  python3-pil gir1.2-gtk-3.0 gir1.2-ayatanaappindicator3-0.1 libzbar0 \
+  python3-pil gir1.2-gtk-3.0 librsvg2-common gir1.2-ayatanaappindicator3-0.1 libzbar0 \
   xvfb xauth desktop-file-utils dpkg-dev
 ```
 

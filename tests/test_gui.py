@@ -3,6 +3,7 @@ from pathlib import Path
 import sys
 import time
 import unittest
+from unittest.mock import patch
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
@@ -46,6 +47,19 @@ class DispatchTests(unittest.TestCase):
         self.assertNotIn('OldPassword89', message)
         self.assertNotIn('NewPassword98', message)
         self.assertNotIn('\x1b', message)
+
+    def test_missing_svg_loader_does_not_prevent_opening_either_view(self):
+        g.Gtk.init([])
+        for view in (g.HotspotWindow, g.CompactHotspotWindow):
+            bridge = g.BackendBridge(demo=True)
+            with patch.object(g.Gtk.Window, 'set_icon_from_file', side_effect=g.GLib.Error('SVG loader unavailable')):
+                window = view(bridge, demo=False)
+            try:
+                self.assertTrue(window.get_visible())
+                self.assertFalse(bridge.connected)
+            finally:
+                window._on_close()
+                window.destroy()
 
     def test_gui_native_controls_and_refresh(self):
         g.Gtk.init([])
