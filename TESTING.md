@@ -1,5 +1,11 @@
 # Testing
 
+## Verification scope
+
+Z Hotspot targets Linux desktops with the required network tools and GTK bindings. The GitHub Actions workflow is configured to run automated checks and build the Debian package on **Ubuntu 24.04**. These checks use mocked network control and local HTTP transfers; they do not exercise a real Wi-Fi adapter.
+
+The known working hardware setup is **Linux Mint 22.3**, with a compatible adapter receiving a 2.4 GHz connection and creating a hotspot on the same channel. This is a record of testing, not a distribution restriction. Additional distribution, driver, adapter, and desktop combinations need their own compatibility checks.
+
 ## Automated checks
 
 Use the system Python with GTK 3/PyGObject and the project's system dependencies available. On a Debian/Ubuntu/Mint development machine, the additional test and build dependencies can be installed with:
@@ -29,7 +35,7 @@ python3 hotspot_gui.py --demo --full
 
 ## Hardware checks
 
-The known working setup is Linux Mint 22.3 with a compatible Wi-Fi adapter receiving a 2.4 GHz connection and creating a hotspot on the same channel. Broader distribution, driver, and adapter compatibility remains unverified.
+Use the following checks to record support for another Linux distribution, desktop, or adapter. A successful package build or demo UI preview alone does not confirm that hotspot control works on that system.
 
 When testing on your own hardware:
 

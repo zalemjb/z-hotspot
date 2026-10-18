@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Z Hotspot: English terminal UI for Linux Mint.
+"""Z Hotspot: English terminal UI for Linux.
 
 Uses the adjacent, BSD-licensed create_ap helper. No Python packages required.
 """

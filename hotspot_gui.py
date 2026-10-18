@@ -2150,7 +2150,7 @@ from hotspot_background import BackgroundController
 
 
 def main() -> int:
-    parser = argparse.ArgumentParser(description="Z Hotspot for Linux Mint")
+    parser = argparse.ArgumentParser(description="Z Hotspot for Linux")
     parser.add_argument("--demo", action="store_true", help="preview without network changes")
     modes = parser.add_mutually_exclusive_group()
     modes.add_argument("--full", action="store_true", help="open the large view with settings and file sharing")

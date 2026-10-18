@@ -29,7 +29,7 @@ APP_FILES = (
 EXECUTABLES = {"hotspot_gui.py", "hotspot_manager.py", "create_ap"}
 DEPENDENCIES = (
     "python3 (>= 3.10), python3-gi, python3-qrcode, gir1.2-gtk-3.0, librsvg2-common, "
-    "gir1.2-ayatanaappindicator3-0.1, hostapd, dnsmasq-base, iw, iptables, "
+    "gir1.2-ayatanaappindicator3-0.1, hostapd, dnsmasq-base, iw, iproute2, iptables, "
     "network-manager, pkexec"
 )
 DESKTOP = """[Desktop Entry]

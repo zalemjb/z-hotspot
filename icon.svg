@@ -1,7 +1,8 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256">
-<defs><linearGradient id="bg" x2="1" y2="1"><stop stop-color="#153844"/><stop offset="1" stop-color="#0e192c"/></linearGradient><linearGradient id="z" x2="1" y2="1"><stop stop-color="#8ff2da"/><stop offset="1" stop-color="#49cdbb"/></linearGradient></defs>
-<rect x="8" y="8" width="240" height="240" rx="58" fill="url(#bg)" stroke="#315569" stroke-width="3"/>
-<path d="M64 82H179V106L105 174H181V201H63V176L138 108H64Z" fill="url(#z)"/>
-<path d="M163 47Q196 47 212 76M171 63Q189 63 198 80" fill="none" stroke="#78e5d2" stroke-width="9" stroke-linecap="round"/>
-<circle cx="181" cy="85" r="5" fill="#78e5d2"/>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256" role="img" aria-label="Z Hotspot logo"><defs>
+<linearGradient id="tile" x2="1" y2="1"><stop stop-color="#183e4b"/><stop offset="1" stop-color="#0d182c"/></linearGradient>
+<linearGradient id="mark" x2="1" y2="1"><stop stop-color="#a3f5dc"/><stop offset="1" stop-color="#4cd3c5"/></linearGradient>
+</defs>
+<rect x="8" y="8" width="240" height="240" rx="56" fill="url(#tile)" stroke="#315769" stroke-width="3"/>
+<path d="M63 83H180V106L105 174H181V201H63V176L138 110H63Z" fill="url(#mark)"/>
+<path d="M162 45C186 45 205 56 216 75M170 62C183 62 194 68 201 80" fill="none" stroke="#83e8d4" stroke-width="8" stroke-linecap="round"/>
+<circle cx="182" cy="85" r="5" fill="#83e8d4"/></svg>

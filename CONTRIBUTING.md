@@ -6,7 +6,7 @@ Thank you for helping improve Z Hotspot. Small bug reports, adapter compatibilit
 
 Search [existing issues](https://github.com/zalemjb/z-hotspot/issues) first. For a larger change, open an issue describing the problem and expected behavior so implementation can be discussed before you invest significant time.
 
-Useful compatibility reports include your Linux distribution/version, Wi-Fi adapter and driver, whether the Internet source is Wi-Fi or Ethernet, and whether the radio is on 2.4 GHz. Do not publish Wi-Fi passwords, transfer links, private QR codes, personal filenames, or unredacted network addresses.
+Z Hotspot targets Linux desktops. Compatibility reports from different distributions are welcome: include your distribution/version, desktop environment, relevant package names, Wi-Fi adapter and driver, whether the Internet source is Wi-Fi or Ethernet, and whether the radio is on 2.4 GHz. Do not publish Wi-Fi passwords, transfer links, private QR codes, personal filenames, or unredacted network addresses.
 
 ## Development
 

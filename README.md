@@ -1,4 +1,6 @@
-# Z Hotspot
+![Z Hotspot — your connection, your control](docs/images/banner.svg)
+
+# Z Hotspot for Linux
 
 **My first project · Vibe Coding · v0.1**
 
@@ -7,8 +9,6 @@ Your connection. Your control.
 My first public project, vibe-coded with AI assistance: a native Linux desktop app for sharing your connection, managing connected devices, and moving files over your local hotspot. Built with Python and GTK 3, with a compact dashboard and a full control center.
 
 [العربية](README.ar.md) · [Download](https://github.com/zalemjb/z-hotspot/releases/latest) · [Report a bug](https://github.com/zalemjb/z-hotspot/issues/new?template=bug_report.yml)
-
-![Z Hotspot overview](docs/images/overview.png)
 
 ## What it does
 
@@ -19,13 +19,25 @@ My first public project, vibe-coded with AI assistance: a native Linux desktop a
 - **Network settings:** change the name and password, generate a password, choose an Internet source, hide the SSID, and isolate clients.
 - **Background mode:** keep the app in the system tray and reopen its compact or full view when needed.
 
-| Compact dashboard | Share files |
-| --- | --- |
-| ![Compact dashboard](docs/images/compact.png) | ![File sharing](docs/images/files.png) |
+## Screenshots
+
+### Full dashboard
+
+![Z Hotspot full dashboard](docs/images/overview.png)
+
+### Compact dashboard
+
+![Z Hotspot compact dashboard](docs/images/compact.png)
+
+### Share files
+
+![Local file sharing](docs/images/files.png)
 
 Screenshots use demo data. The desktop interface is in English.
 
-## Install on Linux Mint
+## Install
+
+### Debian, Ubuntu, and Linux Mint
 
 Download **`z-hotspot_0.1.0_all.deb`** from [Releases](https://github.com/zalemjb/z-hotspot/releases/latest), open it, and install it with your package installer. Then open **Z Hotspot** from the application menu. Use **Z Hotspot — Full view** for the larger interface. The same release also provides **`Z-Hotspot-v0.1.zip`** for running from source.
 
@@ -37,13 +49,22 @@ sudo apt install ./z-hotspot_0.1.0_all.deb
 
 The package declares its dependencies, including Python 3, GTK 3/PyGObject, QR support, Ayatana AppIndicator, NetworkManager, hostapd, dnsmasq, iw, iptables, and pkexec.
 
+### Other Linux distributions
+
+Download **`Z-Hotspot-v0.1.zip`** from [Releases](https://github.com/zalemjb/z-hotspot/releases/latest), extract it, and follow [Run from source](#run-from-source). Install the equivalent system dependencies using your distribution's package manager; the `.deb` package is for Debian-based systems.
+
 Click **Unlock controls** when you want to manage the network. Linux shows its normal administrator authentication window. The graphical app runs as your normal user; a separate helper performs the network changes.
 
-### Wi-Fi requirements
+## Linux and Wi-Fi requirements
 
-Z Hotspot has been tested on **Linux Mint 22.3** with a Wi-Fi adapter that supports a managed connection and an access point at the same time. For that single-adapter setup, connect the computer to **2.4 GHz Wi-Fi** first; the hotspot follows the same channel. Ethernet can also be selected as the Internet source. If the radio is still connected to Wi-Fi, that connection must use 2.4 GHz.
+- A Linux desktop with Python **3.10+**, GTK 3/PyGObject, QR support, and an SVG image loader.
+- NetworkManager (`nmcli`), `hostapd`/`hostapd_cli`, `dnsmasq`, `iw`, `iptables`, the `ip` command, and polkit's `pkexec`.
+- A Wi-Fi adapter and driver that support access-point mode. Receiving Wi-Fi and sharing it with the same adapter also requires concurrent managed/AP support.
+- Ayatana AppIndicator and a working system tray for background mode.
 
-Adapter and driver support vary. This release does not promise 5 GHz operation, support for every adapter, or testing on other Linux distributions.
+For a single-adapter setup, connect the computer to **2.4 GHz Wi-Fi** first; the hotspot follows the same channel. Ethernet can also be selected as the Internet source. If the radio is still connected to Wi-Fi, that connection must use 2.4 GHz. This release uses a 2.4 GHz hotspot.
+
+The project targets Linux; adapter support, dependency names, and desktop integration vary by distribution. See [TESTING.md](TESTING.md) for the environments actually verified and how to add a compatibility report.
 
 ## Everyday use
 
@@ -79,12 +100,14 @@ Only explicitly selected files are offered. Receiving is off until enabled; uplo
 
 ## Run from source
 
-Install the system dependencies, then keep the Python modules and bundled `create_ap` helper together:
+Keep the Python modules and bundled `create_ap` helper together. On Debian, Ubuntu, and Linux Mint, install the runtime dependencies with:
 
 ```sh
 sudo apt install python3 python3-gi python3-qrcode gir1.2-gtk-3.0 librsvg2-common \
-  gir1.2-ayatanaappindicator3-0.1 network-manager hostapd dnsmasq-base iw iptables pkexec
+  gir1.2-ayatanaappindicator3-0.1 network-manager hostapd dnsmasq-base iw iptables iproute2 pkexec
 ```
+
+On other distributions, install equivalent packages for Python 3.10+, PyGObject/GTK 3, Python `qrcode`, SVG image loading, Ayatana AppIndicator, and the network tools listed above. Package names differ; use the system Python interpreter that can import those bindings.
 
 From the extracted source directory:
 
@@ -95,6 +118,15 @@ python3 hotspot_gui.py --demo    # sample data; no network changes
 ```
 
 Use Python with the system GTK bindings available. Do not run the entire GUI with `sudo`; the app requests the network privileges it needs.
+
+To add the app to your application menu on any distribution after installing its dependencies:
+
+```sh
+python3 scripts/install_user.py --check
+python3 scripts/install_user.py
+```
+
+The installer checks the required Python bindings and network tools, copies the app into your user data directory, and adds compact/full launchers with a background action. It runs without `sudo`, does not install system packages, and does not enable automatic startup.
 
 Build the Debian package with:
 

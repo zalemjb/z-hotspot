@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="420" viewBox="0 0 1280 420" role="img" aria-labelledby="title description">
+<title id="title">Z Hotspot — Your connection. Your control.</title>
+<desc id="description">A Linux hotspot manager. My first project, made with Vibe Coding. Version 0.1 by @zalem.j.</desc>
+<defs><linearGradient id="background" x2="1" y2="1"><stop stop-color="#102733"/><stop offset="1" stop-color="#0c1423"/></linearGradient><radialGradient id="glow"><stop stop-color="#2d887f" stop-opacity=".35"/><stop offset="1" stop-color="#102433" stop-opacity="0"/></radialGradient></defs>
+<rect width="1280" height="420" rx="28" fill="url(#background)"/>
+<circle cx="1125" cy="110" r="300" fill="url(#glow)"/>
+<g fill="none" stroke="#325363" opacity=".32"><path d="M880 0V95L990 205H1280M992 0V54L1140 202V420M842 420V317L975 184M1003 420V337L1232 108V0"/><circle cx="990" cy="205" r="9"/><circle cx="1140" cy="202" r="8"/><circle cx="975" cy="184" r="7"/></g>
+<svg x="65" y="80" width="244" height="244" viewBox="0 0 256 256"><defs>
+<linearGradient id="tile" x2="1" y2="1"><stop stop-color="#183e4b"/><stop offset="1" stop-color="#0d182c"/></linearGradient>
+<linearGradient id="mark" x2="1" y2="1"><stop stop-color="#a3f5dc"/><stop offset="1" stop-color="#4cd3c5"/></linearGradient>
+</defs>
+<rect x="8" y="8" width="240" height="240" rx="56" fill="url(#tile)" stroke="#315769" stroke-width="3"/>
+<path d="M63 83H180V106L105 174H181V201H63V176L138 110H63Z" fill="url(#mark)"/>
+<path d="M162 45C186 45 205 56 216 75M170 62C183 62 194 68 201 80" fill="none" stroke="#83e8d4" stroke-width="8" stroke-linecap="round"/>
+<circle cx="182" cy="85" r="5" fill="#83e8d4"/></svg>
+<g font-family="DejaVu Sans, Arial, sans-serif">
+<text x="355" y="104" font-size="15" letter-spacing="3" font-weight="700" fill="#85dbc9">LINUX · PYTHON · GTK</text>
+<text x="350" y="197" font-size="74" font-weight="800" letter-spacing="-3" fill="#f2f7ff">Z Hotspot</text>
+<text x="355" y="241" font-size="26" fill="#a6bacc">Your connection. Your control.</text>
+<path d="M355 272H882" stroke="#2b4557"/>
+<text x="355" y="306" font-size="15" letter-spacing="2" fill="#84a0b6">MY FIRST PROJECT · VIBE CODING</text>
+<rect x="355" y="326" width="72" height="33" rx="16" fill="#1d4848"/>
+<text x="391" y="348" text-anchor="middle" font-size="15" font-weight="700" fill="#8ce8d4">v0.1</text>
+<text x="447" y="349" font-size="18" fill="#dce9f5">@zalem.j</text>
+</g></svg>
